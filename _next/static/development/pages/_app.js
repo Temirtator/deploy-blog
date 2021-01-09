@@ -48,7 +48,7 @@ function Header(_ref) {
       columnNumber: 13
     }
   }, __jsx("img", {
-    src: "/images/avatar.jpg",
+    src: "/images/avatar.jpeg",
     className: "".concat(_header_module_css__WEBPACK_IMPORTED_MODULE_4___default.a.headerImage, " ").concat(_styles_utils_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.borderCircle),
     alt: name,
     __self: this,
