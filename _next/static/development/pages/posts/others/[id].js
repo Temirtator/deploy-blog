@@ -13,7 +13,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! date-fns */ "./node_modules/date-fns/esm/index.js");
-var _jsxFileName = "/Users/temirlanshagyrov/Desktop/Projects/personal-blog/components/Date.js";
+var _jsxFileName = "/Users/temirlanshagyrov/Desktop/personal-blog/components/Date.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -52,7 +52,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _layout_module_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_layout_module_css__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_3__);
-var _jsxFileName = "/Users/temirlanshagyrov/Desktop/Projects/personal-blog/components/layout/layout.js";
+var _jsxFileName = "/Users/temirlanshagyrov/Desktop/personal-blog/components/layout/layout.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -708,7 +708,7 @@ module.exports = __webpack_require__(/*! regenerator-runtime */ "./node_modules/
 
 exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
 // Module
-exports.push([module.i, ".layout_backToHome__VAS_W {\n    margin: 3rem 0 0;\n    cursor: pointer;\n}\n\n.layout_backToHome__VAS_W:hover {\n    text-decoration: underline;\n    cursor: pointer;\n}", "",{"version":3,"sources":["/Users/temirlanshagyrov/Desktop/Projects/personal-blog/components/layout/layout.module.css"],"names":[],"mappings":"AAAA;IACI,gBAAgB;IAChB,eAAe;AACnB;;AAEA;IACI,0BAA0B;IAC1B,eAAe;AACnB","file":"layout.module.css","sourcesContent":[".backToHome {\n    margin: 3rem 0 0;\n    cursor: pointer;\n}\n\n.backToHome:hover {\n    text-decoration: underline;\n    cursor: pointer;\n}"]}]);
+exports.push([module.i, ".layout_backToHome__VAS_W {\n    margin: 3rem 0 0;\n    cursor: pointer;\n}\n\n.layout_backToHome__VAS_W:hover {\n    text-decoration: underline;\n    cursor: pointer;\n}", "",{"version":3,"sources":["/Users/temirlanshagyrov/Desktop/personal-blog/components/layout/layout.module.css"],"names":[],"mappings":"AAAA;IACI,gBAAgB;IAChB,eAAe;AACnB;;AAEA;IACI,0BAA0B;IAC1B,eAAe;AACnB","file":"layout.module.css","sourcesContent":[".backToHome {\n    margin: 3rem 0 0;\n    cursor: pointer;\n}\n\n.backToHome:hover {\n    text-decoration: underline;\n    cursor: pointer;\n}"]}]);
 // Exports
 exports.locals = {
 	"backToHome": "layout_backToHome__VAS_W"
@@ -725,7 +725,7 @@ exports.locals = {
 
 exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
 // Module
-exports.push([module.i, ".utils_heading2Xl__1I65m {\n    font-size: 2.5rem;\n    line-height: 1.2;\n    font-weight: 800;\n    letter-spacing: -0.05rem;\n    margin: 1rem 0;\n}\n\n.utils_headingXl__1XecN {\n    font-size: 2rem;\n    line-height: 1.3;\n    font-weight: 800;\n    letter-spacing: -0.05rem;\n    margin: 1rem 0;\n}\n  \n.utils_headingLg__de7p0 {\n    font-size: 1.5rem;\n    line-height: 1.4;\n    margin: 1rem 0;\n}\n  \n.utils_headingMd__3de6G {\n    font-size: 1.2rem;\n    line-height: 1.5;\n}\n\n.utils_headingLw__1vVPe {\n    font-size: 1rem;\n    line-height: 1.6;\n}\n\n.utils_description__17znU {\n    font-size: 0.8em;\n    line-height: 1.2;\n    color: grey;\n}\n\n.utils_borderCircle__13qdJ {\n    border-radius: 9999px;\n}\n\n.utils_colorInherit__3Gudf {\n    color: inherit;\n}\n\n.utils_padding1px__oCny8 {\n    padding-top: 1px;\n}\n\n.utils_list__S7_pe {\n    list-style: none;\n    padding: 0;\n    margin: 0;\n}\n\n.utils_listItem__2eJpJ {\n    margin: 0 0 1.25rem;\n}\n\n.utils_lightText__12Ckm {\n    color: #999;\n}\n\n.utils_whiteText__aqpP4 {\n    color: hsla(0,0%,100%,0.88);\n}\n\n.utils_greyForNight__3uokK {\n    color: rgb(216, 211, 211);\n}\n\n.utils_ml8__35Wt1 {\n    margin-left: 0.5rem;\n}", "",{"version":3,"sources":["/Users/temirlanshagyrov/Desktop/Projects/personal-blog/styles/utils.module.css"],"names":[],"mappings":"AAAA;IACI,iBAAiB;IACjB,gBAAgB;IAChB,gBAAgB;IAChB,wBAAwB;IACxB,cAAc;AAClB;;AAEA;IACI,eAAe;IACf,gBAAgB;IAChB,gBAAgB;IAChB,wBAAwB;IACxB,cAAc;AAClB;;AAEA;IACI,iBAAiB;IACjB,gBAAgB;IAChB,cAAc;AAClB;;AAEA;IACI,iBAAiB;IACjB,gBAAgB;AACpB;;AAEA;IACI,eAAe;IACf,gBAAgB;AACpB;;AAEA;IACI,gBAAgB;IAChB,gBAAgB;IAChB,WAAW;AACf;;AAEA;IACI,qBAAqB;AACzB;;AAEA;IACI,cAAc;AAClB;;AAEA;IACI,gBAAgB;AACpB;;AAEA;IACI,gBAAgB;IAChB,UAAU;IACV,SAAS;AACb;;AAEA;IACI,mBAAmB;AACvB;;AAEA;IACI,WAAW;AACf;;AAEA;IACI,2BAA2B;AAC/B;;AAEA;IACI,yBAAyB;AAC7B;;AAEA;IACI,mBAAmB;AACvB","file":"utils.module.css","sourcesContent":[".heading2Xl {\n    font-size: 2.5rem;\n    line-height: 1.2;\n    font-weight: 800;\n    letter-spacing: -0.05rem;\n    margin: 1rem 0;\n}\n\n.headingXl {\n    font-size: 2rem;\n    line-height: 1.3;\n    font-weight: 800;\n    letter-spacing: -0.05rem;\n    margin: 1rem 0;\n}\n  \n.headingLg {\n    font-size: 1.5rem;\n    line-height: 1.4;\n    margin: 1rem 0;\n}\n  \n.headingMd {\n    font-size: 1.2rem;\n    line-height: 1.5;\n}\n\n.headingLw {\n    font-size: 1rem;\n    line-height: 1.6;\n}\n\n.description {\n    font-size: 0.8em;\n    line-height: 1.2;\n    color: grey;\n}\n\n.borderCircle {\n    border-radius: 9999px;\n}\n\n.colorInherit {\n    color: inherit;\n}\n\n.padding1px {\n    padding-top: 1px;\n}\n\n.list {\n    list-style: none;\n    padding: 0;\n    margin: 0;\n}\n\n.listItem {\n    margin: 0 0 1.25rem;\n}\n\n.lightText {\n    color: #999;\n}\n\n.whiteText {\n    color: hsla(0,0%,100%,0.88);\n}\n\n.greyForNight {\n    color: rgb(216, 211, 211);\n}\n\n.ml8 {\n    margin-left: 0.5rem;\n}"]}]);
+exports.push([module.i, ".utils_heading2Xl__1I65m {\n    font-size: 2.5rem;\n    line-height: 1.2;\n    font-weight: 800;\n    letter-spacing: -0.05rem;\n    margin: 1rem 0;\n}\n\n.utils_headingXl__1XecN {\n    font-size: 2rem;\n    line-height: 1.3;\n    font-weight: 800;\n    letter-spacing: -0.05rem;\n    margin: 1rem 0;\n}\n  \n.utils_headingLg__de7p0 {\n    font-size: 1.5rem;\n    line-height: 1.4;\n    margin: 1rem 0;\n}\n  \n.utils_headingMd__3de6G {\n    font-size: 1.2rem;\n    line-height: 1.5;\n}\n\n.utils_headingLw__1vVPe {\n    font-size: 1rem;\n    line-height: 1.6;\n}\n\n.utils_description__17znU {\n    font-size: 0.8em;\n    line-height: 1.2;\n    color: grey;\n}\n\n.utils_borderCircle__13qdJ {\n    border-radius: 9999px;\n}\n\n.utils_colorInherit__3Gudf {\n    color: inherit;\n}\n\n.utils_padding1px__oCny8 {\n    padding-top: 1px;\n}\n\n.utils_list__S7_pe {\n    list-style: none;\n    padding: 0;\n    margin: 0;\n}\n\n.utils_listItem__2eJpJ {\n    margin: 0 0 1.25rem;\n}\n\n.utils_lightText__12Ckm {\n    color: #999;\n}\n\n.utils_whiteText__aqpP4 {\n    color: hsla(0,0%,100%,0.88);\n}\n\n.utils_greyForNight__3uokK {\n    color: rgb(216, 211, 211);\n}\n\n.utils_ml8__35Wt1 {\n    margin-left: 0.5rem;\n}", "",{"version":3,"sources":["/Users/temirlanshagyrov/Desktop/personal-blog/styles/utils.module.css"],"names":[],"mappings":"AAAA;IACI,iBAAiB;IACjB,gBAAgB;IAChB,gBAAgB;IAChB,wBAAwB;IACxB,cAAc;AAClB;;AAEA;IACI,eAAe;IACf,gBAAgB;IAChB,gBAAgB;IAChB,wBAAwB;IACxB,cAAc;AAClB;;AAEA;IACI,iBAAiB;IACjB,gBAAgB;IAChB,cAAc;AAClB;;AAEA;IACI,iBAAiB;IACjB,gBAAgB;AACpB;;AAEA;IACI,eAAe;IACf,gBAAgB;AACpB;;AAEA;IACI,gBAAgB;IAChB,gBAAgB;IAChB,WAAW;AACf;;AAEA;IACI,qBAAqB;AACzB;;AAEA;IACI,cAAc;AAClB;;AAEA;IACI,gBAAgB;AACpB;;AAEA;IACI,gBAAgB;IAChB,UAAU;IACV,SAAS;AACb;;AAEA;IACI,mBAAmB;AACvB;;AAEA;IACI,WAAW;AACf;;AAEA;IACI,2BAA2B;AAC/B;;AAEA;IACI,yBAAyB;AAC7B;;AAEA;IACI,mBAAmB;AACvB","file":"utils.module.css","sourcesContent":[".heading2Xl {\n    font-size: 2.5rem;\n    line-height: 1.2;\n    font-weight: 800;\n    letter-spacing: -0.05rem;\n    margin: 1rem 0;\n}\n\n.headingXl {\n    font-size: 2rem;\n    line-height: 1.3;\n    font-weight: 800;\n    letter-spacing: -0.05rem;\n    margin: 1rem 0;\n}\n  \n.headingLg {\n    font-size: 1.5rem;\n    line-height: 1.4;\n    margin: 1rem 0;\n}\n  \n.headingMd {\n    font-size: 1.2rem;\n    line-height: 1.5;\n}\n\n.headingLw {\n    font-size: 1rem;\n    line-height: 1.6;\n}\n\n.description {\n    font-size: 0.8em;\n    line-height: 1.2;\n    color: grey;\n}\n\n.borderCircle {\n    border-radius: 9999px;\n}\n\n.colorInherit {\n    color: inherit;\n}\n\n.padding1px {\n    padding-top: 1px;\n}\n\n.list {\n    list-style: none;\n    padding: 0;\n    margin: 0;\n}\n\n.listItem {\n    margin: 0 0 1.25rem;\n}\n\n.lightText {\n    color: #999;\n}\n\n.whiteText {\n    color: hsla(0,0%,100%,0.88);\n}\n\n.greyForNight {\n    color: rgb(216, 211, 211);\n}\n\n.ml8 {\n    margin-left: 0.5rem;\n}"]}]);
 // Exports
 exports.locals = {
 	"heading2Xl": "utils_heading2Xl__1I65m",
@@ -18168,10 +18168,10 @@ var assign=Object.assign.bind(Object);function g(){return assign;}Object.defineP
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fposts%2Fothers%2F%5Bid%5D&absolutePagePath=%2FUsers%2Ftemirlanshagyrov%2FDesktop%2FProjects%2Fpersonal-blog%2Fpages%2Fposts%2Fothers%2F%5Bid%5D.js!./":
-/*!*********************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fposts%2Fothers%2F%5Bid%5D&absolutePagePath=%2FUsers%2Ftemirlanshagyrov%2FDesktop%2FProjects%2Fpersonal-blog%2Fpages%2Fposts%2Fothers%2F%5Bid%5D.js ***!
-  \*********************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fposts%2Fothers%2F%5Bid%5D&absolutePagePath=%2FUsers%2Ftemirlanshagyrov%2FDesktop%2Fpersonal-blog%2Fpages%2Fposts%2Fothers%2F%5Bid%5D.js!./":
+/*!**********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fposts%2Fothers%2F%5Bid%5D&absolutePagePath=%2FUsers%2Ftemirlanshagyrov%2FDesktop%2Fpersonal-blog%2Fpages%2Fposts%2Fothers%2F%5Bid%5D.js ***!
+  \**********************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -22656,7 +22656,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Date__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../components/Date */ "./components/Date.js");
 /* harmony import */ var _styles_utils_module_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../styles/utils.module.css */ "./styles/utils.module.css");
 /* harmony import */ var _styles_utils_module_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_styles_utils_module_css__WEBPACK_IMPORTED_MODULE_4__);
-var _jsxFileName = "/Users/temirlanshagyrov/Desktop/Projects/personal-blog/pages/posts/others/[id].js";
+var _jsxFileName = "/Users/temirlanshagyrov/Desktop/personal-blog/pages/posts/others/[id].js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -22798,13 +22798,13 @@ if (true) {
 /***/ }),
 
 /***/ 2:
-/*!*************************************************************************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2Fposts%2Fothers%2F%5Bid%5D&absolutePagePath=%2FUsers%2Ftemirlanshagyrov%2FDesktop%2FProjects%2Fpersonal-blog%2Fpages%2Fposts%2Fothers%2F%5Bid%5D.js ***!
-  \*************************************************************************************************************************************************************************************************/
+/*!**************************************************************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2Fposts%2Fothers%2F%5Bid%5D&absolutePagePath=%2FUsers%2Ftemirlanshagyrov%2FDesktop%2Fpersonal-blog%2Fpages%2Fposts%2Fothers%2F%5Bid%5D.js ***!
+  \**************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fposts%2Fothers%2F%5Bid%5D&absolutePagePath=%2FUsers%2Ftemirlanshagyrov%2FDesktop%2FProjects%2Fpersonal-blog%2Fpages%2Fposts%2Fothers%2F%5Bid%5D.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fposts%2Fothers%2F%5Bid%5D&absolutePagePath=%2FUsers%2Ftemirlanshagyrov%2FDesktop%2FProjects%2Fpersonal-blog%2Fpages%2Fposts%2Fothers%2F%5Bid%5D.js!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fposts%2Fothers%2F%5Bid%5D&absolutePagePath=%2FUsers%2Ftemirlanshagyrov%2FDesktop%2Fpersonal-blog%2Fpages%2Fposts%2Fothers%2F%5Bid%5D.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fposts%2Fothers%2F%5Bid%5D&absolutePagePath=%2FUsers%2Ftemirlanshagyrov%2FDesktop%2Fpersonal-blog%2Fpages%2Fposts%2Fothers%2F%5Bid%5D.js!./");
 
 
 /***/ }),
