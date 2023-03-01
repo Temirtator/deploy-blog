@@ -13,7 +13,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! date-fns */ "./node_modules/date-fns/esm/index.js");
-var _jsxFileName = "/Users/temirlanshagyrov/Desktop/personal-blog/components/Date.js";
+var _jsxFileName = "/home/temirlan/Desktop/personal-blog/components/Date.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -52,7 +52,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _layout_module_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_layout_module_css__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_3__);
-var _jsxFileName = "/Users/temirlanshagyrov/Desktop/personal-blog/components/layout/layout.js";
+var _jsxFileName = "/home/temirlan/Desktop/personal-blog/components/layout/layout.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -811,7 +811,7 @@ module.exports = __webpack_require__(/*! regenerator-runtime */ "./node_modules/
 
 exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
 // Module
-exports.push([module.i, ".layout_backToHome__VAS_W {\n    margin: 3rem 0 0;\n    cursor: pointer;\n}\n\n.layout_backToHome__VAS_W:hover {\n    text-decoration: underline;\n    cursor: pointer;\n}", "",{"version":3,"sources":["/Users/temirlanshagyrov/Desktop/personal-blog/components/layout/layout.module.css"],"names":[],"mappings":"AAAA;IACI,gBAAgB;IAChB,eAAe;AACnB;;AAEA;IACI,0BAA0B;IAC1B,eAAe;AACnB","file":"layout.module.css","sourcesContent":[".backToHome {\n    margin: 3rem 0 0;\n    cursor: pointer;\n}\n\n.backToHome:hover {\n    text-decoration: underline;\n    cursor: pointer;\n}"]}]);
+exports.push([module.i, ".layout_backToHome__VAS_W {\n    margin: 3rem 0 0;\n    cursor: pointer;\n}\n\n.layout_backToHome__VAS_W:hover {\n    text-decoration: underline;\n    cursor: pointer;\n}", "",{"version":3,"sources":["/home/temirlan/Desktop/personal-blog/components/layout/layout.module.css"],"names":[],"mappings":"AAAA;IACI,gBAAgB;IAChB,eAAe;AACnB;;AAEA;IACI,0BAA0B;IAC1B,eAAe;AACnB","file":"layout.module.css","sourcesContent":[".backToHome {\n    margin: 3rem 0 0;\n    cursor: pointer;\n}\n\n.backToHome:hover {\n    text-decoration: underline;\n    cursor: pointer;\n}"]}]);
 // Exports
 exports.locals = {
 	"backToHome": "layout_backToHome__VAS_W"
@@ -828,7 +828,7 @@ exports.locals = {
 
 exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
 // Module
-exports.push([module.i, ".tab_header__2Nzv7 {\n    display: flex;\n    flex-direction: row;\n}\n\n.tab_tab__1csqP {\n    cursor: pointer;\n}\n\n.tab_tab__1csqP:hover, .tab_selected__1kf2Z {\n    box-shadow: 0 1px 0 0 currentColor;\n}", "",{"version":3,"sources":["/Users/temirlanshagyrov/Desktop/personal-blog/styles/tab.module.css"],"names":[],"mappings":"AAAA;IACI,aAAa;IACb,mBAAmB;AACvB;;AAEA;IACI,eAAe;AACnB;;AAEA;IACI,kCAAkC;AACtC","file":"tab.module.css","sourcesContent":[".header {\n    display: flex;\n    flex-direction: row;\n}\n\n.tab {\n    cursor: pointer;\n}\n\n.tab:hover, .selected {\n    box-shadow: 0 1px 0 0 currentColor;\n}"]}]);
+exports.push([module.i, ".tab_header__2Nzv7 {\n    display: flex;\n    flex-direction: row;\n}\n\n.tab_tab__1csqP {\n    cursor: pointer;\n}\n\n.tab_tab__1csqP:hover, .tab_selected__1kf2Z {\n    box-shadow: 0 1px 0 0 currentColor;\n}", "",{"version":3,"sources":["/home/temirlan/Desktop/personal-blog/styles/tab.module.css"],"names":[],"mappings":"AAAA;IACI,aAAa;IACb,mBAAmB;AACvB;;AAEA;IACI,eAAe;AACnB;;AAEA;IACI,kCAAkC;AACtC","file":"tab.module.css","sourcesContent":[".header {\n    display: flex;\n    flex-direction: row;\n}\n\n.tab {\n    cursor: pointer;\n}\n\n.tab:hover, .selected {\n    box-shadow: 0 1px 0 0 currentColor;\n}"]}]);
 // Exports
 exports.locals = {
 	"header": "tab_header__2Nzv7",
@@ -847,7 +847,7 @@ exports.locals = {
 
 exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
 // Module
-exports.push([module.i, ".utils_heading2Xl__1I65m {\n    font-size: 2.5rem;\n    line-height: 1.2;\n    font-weight: 800;\n    letter-spacing: -0.05rem;\n    margin: 1rem 0;\n}\n\n.utils_headingXl__1XecN {\n    font-size: 2rem;\n    line-height: 1.3;\n    font-weight: 800;\n    letter-spacing: -0.05rem;\n    margin: 1rem 0;\n}\n  \n.utils_headingLg__de7p0 {\n    font-size: 1.5rem;\n    line-height: 1.4;\n    margin: 1rem 0;\n}\n  \n.utils_headingMd__3de6G {\n    font-size: 1.2rem;\n    line-height: 1.5;\n}\n\n.utils_headingLw__1vVPe {\n    font-size: 1rem;\n    line-height: 1.6;\n}\n\n.utils_description__17znU {\n    font-size: 0.8em;\n    line-height: 1.2;\n    color: grey;\n}\n\n.utils_borderCircle__13qdJ {\n    border-radius: 9999px;\n}\n\n.utils_colorInherit__3Gudf {\n    color: inherit;\n}\n\n.utils_padding1px__oCny8 {\n    padding-top: 1px;\n}\n\n.utils_list__S7_pe {\n    list-style: none;\n    padding: 0;\n    margin: 0;\n}\n\n.utils_listItem__2eJpJ {\n    margin: 0 0 1.25rem;\n}\n\n.utils_lightText__12Ckm {\n    color: #999;\n}\n\n.utils_whiteText__aqpP4 {\n    color: hsla(0,0%,100%,0.88);\n}\n\n.utils_greyForNight__3uokK {\n    color: rgb(216, 211, 211);\n}\n\n.utils_ml8__35Wt1 {\n    margin-left: 0.5rem;\n}", "",{"version":3,"sources":["/Users/temirlanshagyrov/Desktop/personal-blog/styles/utils.module.css"],"names":[],"mappings":"AAAA;IACI,iBAAiB;IACjB,gBAAgB;IAChB,gBAAgB;IAChB,wBAAwB;IACxB,cAAc;AAClB;;AAEA;IACI,eAAe;IACf,gBAAgB;IAChB,gBAAgB;IAChB,wBAAwB;IACxB,cAAc;AAClB;;AAEA;IACI,iBAAiB;IACjB,gBAAgB;IAChB,cAAc;AAClB;;AAEA;IACI,iBAAiB;IACjB,gBAAgB;AACpB;;AAEA;IACI,eAAe;IACf,gBAAgB;AACpB;;AAEA;IACI,gBAAgB;IAChB,gBAAgB;IAChB,WAAW;AACf;;AAEA;IACI,qBAAqB;AACzB;;AAEA;IACI,cAAc;AAClB;;AAEA;IACI,gBAAgB;AACpB;;AAEA;IACI,gBAAgB;IAChB,UAAU;IACV,SAAS;AACb;;AAEA;IACI,mBAAmB;AACvB;;AAEA;IACI,WAAW;AACf;;AAEA;IACI,2BAA2B;AAC/B;;AAEA;IACI,yBAAyB;AAC7B;;AAEA;IACI,mBAAmB;AACvB","file":"utils.module.css","sourcesContent":[".heading2Xl {\n    font-size: 2.5rem;\n    line-height: 1.2;\n    font-weight: 800;\n    letter-spacing: -0.05rem;\n    margin: 1rem 0;\n}\n\n.headingXl {\n    font-size: 2rem;\n    line-height: 1.3;\n    font-weight: 800;\n    letter-spacing: -0.05rem;\n    margin: 1rem 0;\n}\n  \n.headingLg {\n    font-size: 1.5rem;\n    line-height: 1.4;\n    margin: 1rem 0;\n}\n  \n.headingMd {\n    font-size: 1.2rem;\n    line-height: 1.5;\n}\n\n.headingLw {\n    font-size: 1rem;\n    line-height: 1.6;\n}\n\n.description {\n    font-size: 0.8em;\n    line-height: 1.2;\n    color: grey;\n}\n\n.borderCircle {\n    border-radius: 9999px;\n}\n\n.colorInherit {\n    color: inherit;\n}\n\n.padding1px {\n    padding-top: 1px;\n}\n\n.list {\n    list-style: none;\n    padding: 0;\n    margin: 0;\n}\n\n.listItem {\n    margin: 0 0 1.25rem;\n}\n\n.lightText {\n    color: #999;\n}\n\n.whiteText {\n    color: hsla(0,0%,100%,0.88);\n}\n\n.greyForNight {\n    color: rgb(216, 211, 211);\n}\n\n.ml8 {\n    margin-left: 0.5rem;\n}"]}]);
+exports.push([module.i, ".utils_heading2Xl__1I65m {\n    font-size: 2.5rem;\n    line-height: 1.2;\n    font-weight: 800;\n    letter-spacing: -0.05rem;\n    margin: 1rem 0;\n}\n\n.utils_headingXl__1XecN {\n    font-size: 2rem;\n    line-height: 1.3;\n    font-weight: 800;\n    letter-spacing: -0.05rem;\n    margin: 1rem 0;\n}\n  \n.utils_headingLg__de7p0 {\n    font-size: 1.5rem;\n    line-height: 1.4;\n    margin: 1rem 0;\n}\n  \n.utils_headingMd__3de6G {\n    font-size: 1.2rem;\n    line-height: 1.5;\n}\n\n.utils_headingLw__1vVPe {\n    font-size: 1rem;\n    line-height: 1.6;\n}\n\n.utils_description__17znU {\n    font-size: 0.8em;\n    line-height: 1.2;\n    color: grey;\n}\n\n.utils_borderCircle__13qdJ {\n    border-radius: 9999px;\n}\n\n.utils_colorInherit__3Gudf {\n    color: inherit;\n}\n\n.utils_padding1px__oCny8 {\n    padding-top: 1px;\n}\n\n.utils_list__S7_pe {\n    list-style: none;\n    padding: 0;\n    margin: 0;\n}\n\n.utils_listItem__2eJpJ {\n    margin: 0 0 1.25rem;\n}\n\n.utils_lightText__12Ckm {\n    color: #999;\n}\n\n.utils_whiteText__aqpP4 {\n    color: hsla(0,0%,100%,0.88);\n}\n\n.utils_greyForNight__3uokK {\n    color: rgb(216, 211, 211);\n}\n\n.utils_ml8__35Wt1 {\n    margin-left: 0.5rem;\n}", "",{"version":3,"sources":["/home/temirlan/Desktop/personal-blog/styles/utils.module.css"],"names":[],"mappings":"AAAA;IACI,iBAAiB;IACjB,gBAAgB;IAChB,gBAAgB;IAChB,wBAAwB;IACxB,cAAc;AAClB;;AAEA;IACI,eAAe;IACf,gBAAgB;IAChB,gBAAgB;IAChB,wBAAwB;IACxB,cAAc;AAClB;;AAEA;IACI,iBAAiB;IACjB,gBAAgB;IAChB,cAAc;AAClB;;AAEA;IACI,iBAAiB;IACjB,gBAAgB;AACpB;;AAEA;IACI,eAAe;IACf,gBAAgB;AACpB;;AAEA;IACI,gBAAgB;IAChB,gBAAgB;IAChB,WAAW;AACf;;AAEA;IACI,qBAAqB;AACzB;;AAEA;IACI,cAAc;AAClB;;AAEA;IACI,gBAAgB;AACpB;;AAEA;IACI,gBAAgB;IAChB,UAAU;IACV,SAAS;AACb;;AAEA;IACI,mBAAmB;AACvB;;AAEA;IACI,WAAW;AACf;;AAEA;IACI,2BAA2B;AAC/B;;AAEA;IACI,yBAAyB;AAC7B;;AAEA;IACI,mBAAmB;AACvB","file":"utils.module.css","sourcesContent":[".heading2Xl {\n    font-size: 2.5rem;\n    line-height: 1.2;\n    font-weight: 800;\n    letter-spacing: -0.05rem;\n    margin: 1rem 0;\n}\n\n.headingXl {\n    font-size: 2rem;\n    line-height: 1.3;\n    font-weight: 800;\n    letter-spacing: -0.05rem;\n    margin: 1rem 0;\n}\n  \n.headingLg {\n    font-size: 1.5rem;\n    line-height: 1.4;\n    margin: 1rem 0;\n}\n  \n.headingMd {\n    font-size: 1.2rem;\n    line-height: 1.5;\n}\n\n.headingLw {\n    font-size: 1rem;\n    line-height: 1.6;\n}\n\n.description {\n    font-size: 0.8em;\n    line-height: 1.2;\n    color: grey;\n}\n\n.borderCircle {\n    border-radius: 9999px;\n}\n\n.colorInherit {\n    color: inherit;\n}\n\n.padding1px {\n    padding-top: 1px;\n}\n\n.list {\n    list-style: none;\n    padding: 0;\n    margin: 0;\n}\n\n.listItem {\n    margin: 0 0 1.25rem;\n}\n\n.lightText {\n    color: #999;\n}\n\n.whiteText {\n    color: hsla(0,0%,100%,0.88);\n}\n\n.greyForNight {\n    color: rgb(216, 211, 211);\n}\n\n.ml8 {\n    margin-left: 0.5rem;\n}"]}]);
 // Exports
 exports.locals = {
 	"heading2Xl": "utils_heading2Xl__1I65m",
@@ -18290,10 +18290,10 @@ var assign=Object.assign.bind(Object);function g(){return assign;}Object.defineP
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Ftemirlanshagyrov%2FDesktop%2Fpersonal-blog%2Fpages%2Findex.js!./":
-/*!*************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Ftemirlanshagyrov%2FDesktop%2Fpersonal-blog%2Fpages%2Findex.js ***!
-  \*************************************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2Fhome%2Ftemirlan%2FDesktop%2Fpersonal-blog%2Fpages%2Findex.js!./":
+/*!****************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2Fhome%2Ftemirlan%2FDesktop%2Fpersonal-blog%2Fpages%2Findex.js ***!
+  \****************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -22786,7 +22786,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Date__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/Date */ "./components/Date.js");
 
 
-var _jsxFileName = "/Users/temirlanshagyrov/Desktop/personal-blog/pages/index.js";
+var _jsxFileName = "/home/temirlan/Desktop/personal-blog/pages/index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
 
@@ -22802,12 +22802,15 @@ function Home(_ref) {
 
   var otherPosts = _ref.otherPosts,
       jsPosts = _ref.jsPosts,
-      techPosts = _ref.techPosts,
+      leetcodePosts = _ref.leetcodePosts,
       theme = _ref.theme;
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])([{
     open: true,
     name: "#js"
+  }, {
+    open: false,
+    name: "#leetcode"
   }, // {
   //   open: false, name: "#tech"
   // },
@@ -22857,21 +22860,21 @@ function Home(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53,
+      lineNumber: 61,
       columnNumber: 5
     }
   }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_3___default.a, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54,
+      lineNumber: 62,
       columnNumber: 7
     }
   }, __jsx("title", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55,
+      lineNumber: 63,
       columnNumber: 9
     }
   }, _components_layout_layout__WEBPACK_IMPORTED_MODULE_4__["siteTitle"])), __jsx("section", {
@@ -22879,7 +22882,7 @@ function Home(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57,
+      lineNumber: 65,
       columnNumber: 7
     }
   }, __jsx("div", {
@@ -22887,7 +22890,7 @@ function Home(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58,
+      lineNumber: 66,
       columnNumber: 9
     }
   }, tab.map(function (tabProp, index) {
@@ -22897,7 +22900,7 @@ function Home(_ref) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 61,
+        lineNumber: 69,
         columnNumber: 15
       }
     }, __jsx("a", {
@@ -22908,7 +22911,7 @@ function Home(_ref) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 62,
+        lineNumber: 70,
         columnNumber: 17
       }
     }, tabProp.name));
@@ -22917,7 +22920,7 @@ function Home(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74,
+      lineNumber: 82,
       columnNumber: 11
     }
   }, jsPosts.map(function (_ref2, index) {
@@ -22931,7 +22934,7 @@ function Home(_ref) {
       className: _styles_utils_module_css__WEBPACK_IMPORTED_MODULE_5___default.a.listItem
     }, Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_jsx, "key", id), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_jsx, "__self", _this), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_jsx, "__source", {
       fileName: _jsxFileName,
-      lineNumber: 76,
+      lineNumber: 84,
       columnNumber: 15
     }), _jsx), __jsx(next_link__WEBPACK_IMPORTED_MODULE_7___default.a, {
       href: "/posts/js/[id]",
@@ -22939,7 +22942,7 @@ function Home(_ref) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 77,
+        lineNumber: 85,
         columnNumber: 17
       }
     }, __jsx("a", {
@@ -22947,14 +22950,14 @@ function Home(_ref) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 78,
+        lineNumber: 86,
         columnNumber: 19
       }
     }, title)), __jsx("br", {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 80,
+        lineNumber: 88,
         columnNumber: 17
       }
     }), __jsx("small", {
@@ -22962,7 +22965,7 @@ function Home(_ref) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 81,
+        lineNumber: 89,
         columnNumber: 17
       }
     }, __jsx(_components_Date__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -22970,7 +22973,7 @@ function Home(_ref) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 82,
+        lineNumber: 90,
         columnNumber: 19
       }
     })));
@@ -22979,10 +22982,10 @@ function Home(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 108,
+      lineNumber: 99,
       columnNumber: 11
     }
-  }, otherPosts.map(function (_ref3, index) {
+  }, leetcodePosts.map(function (_ref3, index) {
     var _jsx2;
 
     var id = _ref3.id,
@@ -22993,15 +22996,15 @@ function Home(_ref) {
       className: _styles_utils_module_css__WEBPACK_IMPORTED_MODULE_5___default.a.listItem
     }, Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_jsx2, "key", id), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_jsx2, "__self", _this), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_jsx2, "__source", {
       fileName: _jsxFileName,
-      lineNumber: 110,
+      lineNumber: 101,
       columnNumber: 15
     }), _jsx2), __jsx(next_link__WEBPACK_IMPORTED_MODULE_7___default.a, {
-      href: "/posts/others/[id]",
-      as: "/posts/others/".concat(id),
+      href: "/posts/leetcode/[id]",
+      as: "/posts/leetcode/".concat(id),
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 111,
+        lineNumber: 102,
         columnNumber: 17
       }
     }, __jsx("a", {
@@ -23009,14 +23012,14 @@ function Home(_ref) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 112,
+        lineNumber: 103,
         columnNumber: 19
       }
     }, title)), __jsx("br", {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 114,
+        lineNumber: 105,
         columnNumber: 17
       }
     }), __jsx("small", {
@@ -23024,7 +23027,7 @@ function Home(_ref) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 115,
+        lineNumber: 106,
         columnNumber: 17
       }
     }, __jsx(_components_Date__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -23032,7 +23035,69 @@ function Home(_ref) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 116,
+        lineNumber: 107,
+        columnNumber: 19
+      }
+    })));
+  })), tab[2].open && __jsx("ul", {
+    className: _styles_utils_module_css__WEBPACK_IMPORTED_MODULE_5___default.a.list,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 133,
+      columnNumber: 11
+    }
+  }, otherPosts.map(function (_ref4, index) {
+    var _jsx3;
+
+    var id = _ref4.id,
+        date = _ref4.date,
+        title = _ref4.title;
+    return __jsx("li", (_jsx3 = {
+      key: index,
+      className: _styles_utils_module_css__WEBPACK_IMPORTED_MODULE_5___default.a.listItem
+    }, Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_jsx3, "key", id), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_jsx3, "__self", _this), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_jsx3, "__source", {
+      fileName: _jsxFileName,
+      lineNumber: 135,
+      columnNumber: 15
+    }), _jsx3), __jsx(next_link__WEBPACK_IMPORTED_MODULE_7___default.a, {
+      href: "/posts/others/[id]",
+      as: "/posts/others/".concat(id),
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 136,
+        columnNumber: 17
+      }
+    }, __jsx("a", {
+      className: theme ? 'dark' : null,
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 137,
+        columnNumber: 19
+      }
+    }, title)), __jsx("br", {
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 139,
+        columnNumber: 17
+      }
+    }), __jsx("small", {
+      className: _styles_utils_module_css__WEBPACK_IMPORTED_MODULE_5___default.a.lightText,
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 140,
+        columnNumber: 17
+      }
+    }, __jsx(_components_Date__WEBPACK_IMPORTED_MODULE_8__["default"], {
+      dateString: date,
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 141,
         columnNumber: 19
       }
     })));
@@ -23163,14 +23228,14 @@ if (true) {
 
 /***/ }),
 
-/***/ 1:
-/*!*****************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Ftemirlanshagyrov%2FDesktop%2Fpersonal-blog%2Fpages%2Findex.js ***!
-  \*****************************************************************************************************************************************/
+/***/ 3:
+/*!********************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2Fhome%2Ftemirlan%2FDesktop%2Fpersonal-blog%2Fpages%2Findex.js ***!
+  \********************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Ftemirlanshagyrov%2FDesktop%2Fpersonal-blog%2Fpages%2Findex.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Ftemirlanshagyrov%2FDesktop%2Fpersonal-blog%2Fpages%2Findex.js!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absolutePagePath=%2Fhome%2Ftemirlan%2FDesktop%2Fpersonal-blog%2Fpages%2Findex.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2Fhome%2Ftemirlan%2FDesktop%2Fpersonal-blog%2Fpages%2Findex.js!./");
 
 
 /***/ }),
@@ -23186,5 +23251,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js"]]]);
+},[[3,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map
