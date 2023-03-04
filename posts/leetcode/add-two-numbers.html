@@ -1,0 +1,90 @@
+<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="icon" href="/favicon.ico"/><meta name="description" content="Blog of Shagyrov Temirlan"/><meta property="og:image" content="https://og-image.now.sh/Personal%20blog%20by%20Temirlan.png?theme=light&amp;md=0&amp;fontSize=75px&amp;images=https%3A%2F%2Fassets.zeit.co%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg"/><meta name="og:title" content="Personal blog by Temirlan"/><meta name="twitter:card" content="summary_large_image"/><title>Add two numbers (Medium level)</title><meta name="next-head-count" content="8"/><link rel="preload" href="/_next/static/css/c7773d89c84d065e2df5.css" as="style"/><link rel="stylesheet" href="/_next/static/css/c7773d89c84d065e2df5.css"/><link rel="preload" href="/_next/static/css/5d109cb4f0723c828d38.css" as="style"/><link rel="stylesheet" href="/_next/static/css/5d109cb4f0723c828d38.css"/><link rel="preload" href="/_next/static/cw0ngj7m466JBYd2srxu_/pages/posts/leetcode/%5Bid%5D.js" as="script"/><link rel="preload" href="/_next/static/cw0ngj7m466JBYd2srxu_/pages/_app.js" as="script"/><link rel="preload" href="/_next/static/runtime/webpack-b65cab0b00afd201cbda.js" as="script"/><link rel="preload" href="/_next/static/chunks/framework.0f140d5eb2070c7e423d.js" as="script"/><link rel="preload" href="/_next/static/chunks/bd230cb2569c17c84de912452aabdc41abed7268.de9c554ee09d03c4b240.js" as="script"/><link rel="preload" href="/_next/static/runtime/main-c1bca9c2911ef8da43bc.js" as="script"/><link rel="preload" href="/_next/static/chunks/963e87fe81ab751e032e54f0e832f1201d5cc535.ebc6927550d609a72945.js" as="script"/></head><body><div id="__next"><div class="container"><header class="header_header__HDboe"><img src="/images/avatar.jpg" class="header_headerImage__2BWot utils_borderCircle__13qdJ" alt="Personal blog by "/><div class="header_header_right_side__3pKl-"><div class="utils_ml8__35Wt1 header_blog_description__Oqypm"><div class="utils_headingLw__1vVPe null">Personal blog by <a class="null header_linkToInstagram__3xjpo" target="_blank" href="https://www.instagram.com/temirtator23/">Shagyrov Temirlan</a></div><div class="utils_description__17znU">Let&#x27;s discuss almost everything</div></div><div class="toggle_toggle_container__3fg78"><div class="toggle_dialog_button__c8m4w toggle_disabled__3tCf-"><img src="/images/light.png" alt="light"/></div></div></div></header><br/><div><main><article><h1 class="utils_headingXl__1XecN null">Add two numbers (Medium level)</h1><div class="utils_lightText__12Ckm"><time dateTime="2023-03-05">March 5, 2023</time></div><div><h2>Description</h2>
+<p>You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.</p>
+<p>You may assume the two numbers do not contain any leading zero, except the number 0 itself.</p>
+<p>Example 1:</p>
+<pre><code>Input: l1 = [2,4,3], l2 = [5,6,4]
+Output: [7,0,8]
+Explanation: 342 + 465 = 807.
+</code></pre>
+<p>Example 2:</p>
+<pre><code>Input: l1 = [0], l2 = [0]
+Output: [0]
+</code></pre>
+<p>Example 3:</p>
+<pre><code>Input: l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]
+Output: [8,9,9,9,0,0,0,1]
+</code></pre>
+<p>Constraints:</p>
+<ul>
+<li>The number of nodes in each linked list is in the range [1, 100].</li>
+<li>0 &#x3C;= Node.val &#x3C;= 9</li>
+<li>It is guaranteed that the list represents a number that does not have leading zeros.</li>
+</ul>
+<h2>Solution</h2>
+<h3>Elementary Math</h3>
+<p>Intuition</p>
+<p>Keep track of the carry using a variable and simulate digits-by-digits sum starting from the head of list, which contains the least-significant digit.</p>
+<pre><code>l1 => 2 => 4 => 3 => null
++ 
+l2 => 5 => 6 => 4 => null
+=
+result => 7 => 0 => 8(carry = 1) => null
+</code></pre>
+<p>Algorithm</p>
+<p>Just like how you would sum two numbers on a piece of paper, we begin by summing the least-significant digits, which is the head of l1 and l2. Since each digit is in the range of 0...9, summing two digits may "overflow". For example <code>5+7=12</code>. In this case, we set the current digit to 2 and bring over the carry=1 to the next iteration. carry must be either 0 or 1 because the largest possible sum of two digits (including the carry) is <code>9+9+1=19</code>.</p>
+<p>The pseudocode is as following:</p>
+<ul>
+<li>Initialize current node to dummy head of the returning list.</li>
+<li>Initialize carry to 0.</li>
+<li>Loop through lists l1 and l2 until you reach both ends and carry is 0.<ul>
+<li>Set x to node l1's value. If l1 has reached the end of l1, set to 0.</li>
+<li>Set y to node l2's value. If l2 has reached the end of l2, set to 0.</li>
+<li>Set sum=x+y+carry.</li>
+<li>Update carry=sum/10.</li>
+<li>Create a new node with the digit value of (sum mod 10) and set it to current node's next, then advance current node to next.</li>
+<li>Advance both l1 and l2.</li>
+</ul></li>
+<li>Return dummy head's next node.</li>
+</ul>
+<p>Note that we use a dummy head to simplify the code. Without a dummy head, you would have to write extra conditional statements to initialize the head's value.</p>
+<p>Take extra caution of the following cases:</p>
+<ul>
+<li>
+<p>When one list is longer than the other. <code>l1=[0,1] l2=[0,1,2]</code></p>
+</li>
+<li>
+<p>When one list is null, which means an empty list. <code>l1=[] l2=[0,1]</code></p>
+</li>
+<li>
+<p>The sum could have an extra carry of one at the end, which is easy to forget. <code>l1=[9,9] l2=[1]</code></p>
+</li>
+<li>
+<p>Time complexity: <code>O(max(m,n))</code>. Assume that <code>m</code> and <code>n</code> represents the length of <code>l1</code> and <code>l2</code> respectively, the algorithm above iterates at most <code>max⁡(m,n)</code> times.</p>
+</li>
+<li>
+<p>Space complexity: <code>O(max(m,n))</code>. The length of the new list is at most <code>max⁡(m,n) + 1</code>.</p>
+</li>
+</ul>
+<p>Implementation</p>
+<pre><code class="language-typescript">function addTwoNumbers(l1: ListNode | null, l2: ListNode | null): ListNode | null {
+  let carry: number = 0
+  let dummy: ListNode = new ListNode(-1, null)
+  let head: ListNode = dummy
+  while (l1 != null || l2 != null || carry != 0) {
+      let x: number = l1 != null ? l1.val : 0
+      let y: number = l2 != null ? l2.val : 0
+      let sum = x + y + carry
+      carry = Math.floor(sum / 10)
+      head.next = new ListNode(sum % 10)
+      head = head.next
+      l1 ? l1 = l1.next : null
+      l2 ? l2 = l2.next : null
+  }
+  return dummy.next
+};
+</code></pre>
+<p>Follow up</p>
+<p>What if the the digits in the linked list are stored in non-reversed order? For example:</p>
+<p><code>(3 => 4 => 2) + (4 => 6 => 5) = 8 => 0 => 7</code></p>
+<p>and what about solving problem with recursion?</p>
+</div></article></main><h2 class="layout_backToHome__VAS_W"><a>← Back to home</a></h2></div></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"leetcodeData":{"id":"add-two-numbers","contentHtml":"\u003ch2\u003eDescription\u003c/h2\u003e\n\u003cp\u003eYou are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.\u003c/p\u003e\n\u003cp\u003eYou may assume the two numbers do not contain any leading zero, except the number 0 itself.\u003c/p\u003e\n\u003cp\u003eExample 1:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003eInput: l1 = [2,4,3], l2 = [5,6,4]\nOutput: [7,0,8]\nExplanation: 342 + 465 = 807.\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eExample 2:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003eInput: l1 = [0], l2 = [0]\nOutput: [0]\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eExample 3:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003eInput: l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]\nOutput: [8,9,9,9,0,0,0,1]\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eConstraints:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eThe number of nodes in each linked list is in the range [1, 100].\u003c/li\u003e\n\u003cli\u003e0 \u0026#x3C;= Node.val \u0026#x3C;= 9\u003c/li\u003e\n\u003cli\u003eIt is guaranteed that the list represents a number that does not have leading zeros.\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003eSolution\u003c/h2\u003e\n\u003ch3\u003eElementary Math\u003c/h3\u003e\n\u003cp\u003eIntuition\u003c/p\u003e\n\u003cp\u003eKeep track of the carry using a variable and simulate digits-by-digits sum starting from the head of list, which contains the least-significant digit.\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003el1 =\u003e 2 =\u003e 4 =\u003e 3 =\u003e null\n+ \nl2 =\u003e 5 =\u003e 6 =\u003e 4 =\u003e null\n=\nresult =\u003e 7 =\u003e 0 =\u003e 8(carry = 1) =\u003e null\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eAlgorithm\u003c/p\u003e\n\u003cp\u003eJust like how you would sum two numbers on a piece of paper, we begin by summing the least-significant digits, which is the head of l1 and l2. Since each digit is in the range of 0...9, summing two digits may \"overflow\". For example \u003ccode\u003e5+7=12\u003c/code\u003e. In this case, we set the current digit to 2 and bring over the carry=1 to the next iteration. carry must be either 0 or 1 because the largest possible sum of two digits (including the carry) is \u003ccode\u003e9+9+1=19\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003eThe pseudocode is as following:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eInitialize current node to dummy head of the returning list.\u003c/li\u003e\n\u003cli\u003eInitialize carry to 0.\u003c/li\u003e\n\u003cli\u003eLoop through lists l1 and l2 until you reach both ends and carry is 0.\u003cul\u003e\n\u003cli\u003eSet x to node l1's value. If l1 has reached the end of l1, set to 0.\u003c/li\u003e\n\u003cli\u003eSet y to node l2's value. If l2 has reached the end of l2, set to 0.\u003c/li\u003e\n\u003cli\u003eSet sum=x+y+carry.\u003c/li\u003e\n\u003cli\u003eUpdate carry=sum/10.\u003c/li\u003e\n\u003cli\u003eCreate a new node with the digit value of (sum mod 10) and set it to current node's next, then advance current node to next.\u003c/li\u003e\n\u003cli\u003eAdvance both l1 and l2.\u003c/li\u003e\n\u003c/ul\u003e\u003c/li\u003e\n\u003cli\u003eReturn dummy head's next node.\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eNote that we use a dummy head to simplify the code. Without a dummy head, you would have to write extra conditional statements to initialize the head's value.\u003c/p\u003e\n\u003cp\u003eTake extra caution of the following cases:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003eWhen one list is longer than the other. \u003ccode\u003el1=[0,1] l2=[0,1,2]\u003c/code\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eWhen one list is null, which means an empty list. \u003ccode\u003el1=[] l2=[0,1]\u003c/code\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eThe sum could have an extra carry of one at the end, which is easy to forget. \u003ccode\u003el1=[9,9] l2=[1]\u003c/code\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eTime complexity: \u003ccode\u003eO(max(m,n))\u003c/code\u003e. Assume that \u003ccode\u003em\u003c/code\u003e and \u003ccode\u003en\u003c/code\u003e represents the length of \u003ccode\u003el1\u003c/code\u003e and \u003ccode\u003el2\u003c/code\u003e respectively, the algorithm above iterates at most \u003ccode\u003emax⁡(m,n)\u003c/code\u003e times.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eSpace complexity: \u003ccode\u003eO(max(m,n))\u003c/code\u003e. The length of the new list is at most \u003ccode\u003emax⁡(m,n) + 1\u003c/code\u003e.\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eImplementation\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-typescript\"\u003efunction addTwoNumbers(l1: ListNode | null, l2: ListNode | null): ListNode | null {\n  let carry: number = 0\n  let dummy: ListNode = new ListNode(-1, null)\n  let head: ListNode = dummy\n  while (l1 != null || l2 != null || carry != 0) {\n      let x: number = l1 != null ? l1.val : 0\n      let y: number = l2 != null ? l2.val : 0\n      let sum = x + y + carry\n      carry = Math.floor(sum / 10)\n      head.next = new ListNode(sum % 10)\n      head = head.next\n      l1 ? l1 = l1.next : null\n      l2 ? l2 = l2.next : null\n  }\n  return dummy.next\n};\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eFollow up\u003c/p\u003e\n\u003cp\u003eWhat if the the digits in the linked list are stored in non-reversed order? For example:\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e(3 =\u003e 4 =\u003e 2) + (4 =\u003e 6 =\u003e 5) = 8 =\u003e 0 =\u003e 7\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eand what about solving problem with recursion?\u003c/p\u003e\n","title":"Add two numbers (Medium level)","date":"2023-03-05"}},"__N_SSG":true},"page":"/posts/leetcode/[id]","query":{"id":"add-two-numbers"},"buildId":"cw0ngj7m466JBYd2srxu_","nextExport":false,"isFallback":false,"gsp":true}</script><script nomodule="" src="/_next/static/runtime/polyfills-895c6aa13952c0a67e69.js"></script><script async="" data-next-page="/posts/leetcode/[id]" src="/_next/static/cw0ngj7m466JBYd2srxu_/pages/posts/leetcode/%5Bid%5D.js"></script><script async="" data-next-page="/_app" src="/_next/static/cw0ngj7m466JBYd2srxu_/pages/_app.js"></script><script src="/_next/static/runtime/webpack-b65cab0b00afd201cbda.js" async=""></script><script src="/_next/static/chunks/framework.0f140d5eb2070c7e423d.js" async=""></script><script src="/_next/static/chunks/bd230cb2569c17c84de912452aabdc41abed7268.de9c554ee09d03c4b240.js" async=""></script><script src="/_next/static/runtime/main-c1bca9c2911ef8da43bc.js" async=""></script><script src="/_next/static/chunks/963e87fe81ab751e032e54f0e832f1201d5cc535.ebc6927550d609a72945.js" async=""></script><script src="/_next/static/cw0ngj7m466JBYd2srxu_/_buildManifest.js" async=""></script><script src="/_next/static/cw0ngj7m466JBYd2srxu_/_ssgManifest.js" async=""></script></body></html>
