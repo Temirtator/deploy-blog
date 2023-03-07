@@ -1,0 +1,180 @@
+<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="icon" href="/favicon.ico"/><meta name="description" content="Blog of Shagyrov Temirlan"/><meta property="og:image" content="https://og-image.now.sh/Personal%20blog%20by%20Temirlan.png?theme=light&amp;md=0&amp;fontSize=75px&amp;images=https%3A%2F%2Fassets.zeit.co%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg"/><meta name="og:title" content="Personal blog by Temirlan"/><meta name="twitter:card" content="summary_large_image"/><title>Longest Substring Without Repeating Characters (Medium level)</title><meta name="next-head-count" content="8"/><link rel="preload" href="/_next/static/css/c7773d89c84d065e2df5.css" as="style"/><link rel="stylesheet" href="/_next/static/css/c7773d89c84d065e2df5.css"/><link rel="preload" href="/_next/static/css/5d109cb4f0723c828d38.css" as="style"/><link rel="stylesheet" href="/_next/static/css/5d109cb4f0723c828d38.css"/><link rel="preload" href="/_next/static/tqLdpZuk2pY0SHATa-eC0/pages/posts/leetcode/%5Bid%5D.js" as="script"/><link rel="preload" href="/_next/static/tqLdpZuk2pY0SHATa-eC0/pages/_app.js" as="script"/><link rel="preload" href="/_next/static/runtime/webpack-b65cab0b00afd201cbda.js" as="script"/><link rel="preload" href="/_next/static/chunks/framework.0f140d5eb2070c7e423d.js" as="script"/><link rel="preload" href="/_next/static/chunks/18c5f24d5ea4d2fcde72e74909d0feb9615668e4.de9c554ee09d03c4b240.js" as="script"/><link rel="preload" href="/_next/static/runtime/main-2ce0d867908e5dbc3349.js" as="script"/><link rel="preload" href="/_next/static/chunks/8621f9e819e9996655f35df90abc93ea78d6616f.ebc6927550d609a72945.js" as="script"/></head><body><div id="__next"><div class="container"><header class="header_header__HDboe"><img src="/images/avatar.jpg" class="header_headerImage__2BWot utils_borderCircle__13qdJ" alt="Personal blog by "/><div class="header_header_right_side__3pKl-"><div class="utils_ml8__35Wt1 header_blog_description__Oqypm"><div class="utils_headingLw__1vVPe null">Personal blog by <a class="null header_linkToInstagram__3xjpo" target="_blank" href="https://www.instagram.com/temirtator23/">Shagyrov Temirlan</a></div><div class="utils_description__17znU">Let&#x27;s discuss almost everything</div></div><div class="toggle_toggle_container__3fg78"><div class="toggle_dialog_button__c8m4w toggle_disabled__3tCf-"><img src="/images/light.png" alt="light"/></div></div></div></header><br/><div><main><article><h1 class="utils_headingXl__1XecN null">Longest Substring Without Repeating Characters (Medium level)</h1><div class="utils_lightText__12Ckm"><time dateTime="2023-03-07">March 7, 2023</time></div><div><h2>Description</h2>
+<p>Given a string s, find the length of the longest substring without repeating characters.</p>
+<p>Example 1:</p>
+<pre><code>Input: s = "abcabcbb"
+Output: 3
+Explanation: The answer is "abc", with the length of 3.
+</code></pre>
+<p>Example 2:</p>
+<pre><code>Input: s = "bbbbb"
+Output: 1
+Explanation: The answer is "b", with the length of 1.
+</code></pre>
+<p>Example 3:</p>
+<pre><code>Input: s = "pwwkew"
+Output: 3
+Explanation: The answer is "wke", with the length of 3.
+Notice that the answer must be a substring, "pwke" is a subsequence and not a substring.
+</code></pre>
+<p>Constraints:</p>
+<ul>
+<li><code>0 &#x3C;= s.length &#x3C;= 5 * 104</code></li>
+<li><code>s</code> consists of English letters, digits, symbols and spaces.</li>
+</ul>
+<h2>Overview</h2>
+<p>The primary challenge in this problem is to find an efficient way to get all possible longest substrings that contain no duplicate characters. To achieve this, we need to take advantage of Hash Table, which checks if a character occurs before quickly.</p>
+<p>In the following three approaches, we utilize a hash table to guarantee substrings have no repeating characters and optimize the algorithm to query possible substrings step by step: the first approach is intuitive but may cause a TLE, and the second one uses a slide window method to narrow down the search range, and the third make further use of HashMap to reduce the search range faster.</p>
+<h3>Approach 1: Brute Force</h3>
+<p>Intuition</p>
+<p>Check all the substring one by one to see if it has no duplicate character.</p>
+<p>Algorithm</p>
+<p>Suppose we have a function <code>boolean allUnique(String substring)</code> which will return true if the characters in the substring are all unique, otherwise false. We can iterate through all the possible substrings of the given string s and call the function <code>allUnique</code>. If it turns out to be true, then we update our answer of the maximum length of substring without duplicate characters.</p>
+<p>Now let's fill the missing parts:</p>
+<ol>
+<li>
+<p>To enumerate all substrings of a given string, we enumerate the start and end indices of them. Suppose the start and end indices are <code>i</code> and <code>j</code>, respectively. Then we have <code>0 &#x3C;= i &#x3C;= j &#x3C;= n</code>  (here end index <code>j</code> is exclusive by convention). Thus, using two nested loops with <code>i</code> from 0 to <code>n - 1</code> to <code>n</code>,
+we can enumerate all the substrings of <code>s</code>.</p>
+</li>
+<li>
+<p>To check if one string has duplicate characters, we can use a set. We iterate through all the characters in the string and put them into the <code>set</code> one by one. Before putting one character, we check if the set already contains it. If so, we return <code>false</code>. After the loop, we return <code>true</code>;</p>
+</li>
+</ol>
+<ul>
+<li>Time complexity: <code>O(n^3)</code></li>
+<li>Space complexity: <code>O(min(m, n))</code></li>
+</ul>
+<p>Implementation</p>
+<pre><code class="language-typescript">function checkUnique(start: number, end: number, s: string): boolean {
+  let chars = new Set();
+
+  for (let i = start; i &#x3C;= end; i++) {
+    let currentChar = s.charAt(i);
+    if (chars.has(currentChar)) {
+      return false;
+    }
+    chars.add(currentChar);
+  }
+  return true;
+};
+
+function lengthOfLongestSubstring(s: string): number {
+  let res = 0;
+  for (let left = 0; left &#x3C; s.length; left++) {
+    for (let right = left; right &#x3C; s.length; right++) {
+      if (checkUnique(left, right, s)) {
+        res = Math.max(res, right - left + 1);
+      }
+    }
+  }
+
+  return res;
+};
+</code></pre>
+<h3>Approach 2: Sliding Window</h3>
+<p>Intuition</p>
+<p>Given a substring with a fixed end index in the string, maintain a HashMap to record the frequency of each character in the current substring. If any character occurs more than once, drop the leftmost characters until there are no duplicate characters.</p>
+<p>Algorithm</p>
+<p>The naive approach is very straightforward. But it is too slow. So how can we optimize it?</p>
+<p>In the naive approaches, we repeatedly check a substring to see if it has duplicate character. But it is unnecessary. If a substring <code>s[i, j]</code> from index <code>i</code> to <code>j - 1</code> is already checked to have no duplicate characters.We only need to check if <code>s[j]</code> is already in the substring <code>s[i, j]</code>.</p>
+<p>To check if a character is already in the substring, we can scan the substring, which leads to an <code>O(n^2)</code> algorithm. But we can do better.</p>
+<p>By using HashSet as a sliding window, checking if a character in the current can be done in <code>O(1)</code>.</p>
+<p>A sliding window is an abstract concept commonly used in array/string problems. A window is a range of elements in the array/string which usually defined by the start and end indices, i.e. <code>[i, j)</code> (left-closed, right-open). A sliding window is a window "slides" its two boundaries to the certain direction. For example, if we slide <code>[i, j)</code> to the right by <code>1</code> element, then it becomes <code>[i+1, j+1)</code>  (left-closed, right-open).</p>
+<p>Back to our problem. We use HashSet to store the characters in current window <code>[i, j)</code> (<code>j = i</code> initially). Then we slide the index <code>j</code> to the right. If it is not in the HashSet, we slide <code>j</code> further. Doing so until <code>s[j]</code> is already in the HashSet. At this point, we found the maximum size of substrings without duplicate characters start with index <code>i</code>. If we do this for all <code>i</code>, we got our answer.</p>
+<ul>
+<li>Time complexity: <code>O(2n) = n</code></li>
+<li>Space complexity:  <code>O(min(m, n)</code></li>
+</ul>
+<p>Implementation</p>
+<pre><code class="language-typescript">function lengthOfLongestSubstring(s: string): number {
+  const hashMap = new Map();
+
+  let left = 0;
+  let right = 0;
+  let res = 0;
+
+  while (right &#x3C; s.length) {
+    const r = s.charAt(right);
+    const rStoredValue = hashMap.get(r) ?? 0; 
+    hashMap.set(r, rStoredValue + 1);
+
+    while (hashMap.get(r) > 1) {
+      const l = s.charAt(left);
+      const lStoredValue = hashMap.get(l) ?? 0;
+      hashMap.set(l, lStoredValue - 1);
+      left++;
+    }
+
+    res = Math.max(res, right - left + 1);
+
+    right++;
+  }
+
+  return res;
+
+};
+</code></pre>
+<h3>Approach 3: Sliding Window Optimized</h3>
+<p>Intuition</p>
+<p>The above solution requires at most 2n steps. In fact, it could be optimized to require only n steps. Instead of using a set to tell if a character exists or not, we could define a mapping of the characters to its index. Then we can skip the characters immediately when we found a repeated character.</p>
+<p>Algorithm</p>
+<p>The reason is that if <code>s[j]</code> have a duplicate in the range <code>[i,j)</code> with index <code>j′</code>, we don't need to increase <code>i</code> little by little. We can skip all the elements in the range <code>[i,j′]</code> and let <code>i</code> to be <code>j′+1</code> directly.</p>
+<ul>
+<li>Time complexity: <code>O(n)</code></li>
+<li>Space complexity: <code>O(min(m, n))</code></li>
+</ul>
+<p>Implementation</p>
+<pre><code class="language-typescript">function lengthOfLongestSubstring(s: string) {
+  const hashMap = new Map();
+
+  let res = 0;
+  let left = 0;
+
+  for (let right = 0; right &#x3C; s.length; right++) {
+    const rLetter = s.charAt(right);
+    if (hashMap.has(rLetter)) {
+      left = Math.max(hashMap.get(rLetter), left);
+    }
+
+    res = Math.max(res, right - left + 1);
+    hashMap.set(rLetter, right + 1);
+  }
+ 
+  return res;
+};
+</code></pre>
+<h3>Tips</h3>
+<p>All previous implementations have no assumption on the charset of the string <code>s</code>.</p>
+<p>If we know that the charset is rather small, we can mimic what a HashSet/HashMap does with a boolean/integer array as direct access table. Though the time complexity of query or insertion is still <code>O(1)</code>, the constant factor is smaller in an array than in a HashMap/HashSet. Thus, we can achieve a shorter runtime by the replacement here.</p>
+<p>Commonly used tables are:</p>
+<ul>
+<li><code>int[26]</code> for Letters 'a' - 'z' or 'A' - 'Z'</li>
+<li><code>int[128]</code> for ASCII</li>
+<li><code>int[256]</code> for Extended ASCII</li>
+</ul>
+<pre><code class="language-typescript">function lengthOfLongestSubstring(s: string) {
+  const hashMap = new Map();
+
+  let res = 0;
+  let left = 0;
+  let right = 0;
+
+  while (right &#x3C; s.length) {
+    const r = s.charAt(right);
+
+    let index = hashMap.get(r);
+    if (index !== null &#x26;&#x26; index >= left &#x26;&#x26; index &#x3C; right) {
+      left = index + 1;
+    }
+
+    res = Math.max(res, right - left + 1);
+
+    hashMap.set(r, right);
+    right++;
+  }
+
+  return res;
+
+};
+</code></pre>
+<p>For this implementation, the space complexity is fixed to <code>O(m)</code> while the time complexity keeps unchanged. <code>m</code> is the size of the charset.</p>
+</div></article></main><h2 class="layout_backToHome__VAS_W"><a>← Back to home</a></h2></div></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"leetcodeData":{"id":"longest-substring-without-repeating-characters","contentHtml":"\u003ch2\u003eDescription\u003c/h2\u003e\n\u003cp\u003eGiven a string s, find the length of the longest substring without repeating characters.\u003c/p\u003e\n\u003cp\u003eExample 1:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003eInput: s = \"abcabcbb\"\nOutput: 3\nExplanation: The answer is \"abc\", with the length of 3.\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eExample 2:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003eInput: s = \"bbbbb\"\nOutput: 1\nExplanation: The answer is \"b\", with the length of 1.\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eExample 3:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003eInput: s = \"pwwkew\"\nOutput: 3\nExplanation: The answer is \"wke\", with the length of 3.\nNotice that the answer must be a substring, \"pwke\" is a subsequence and not a substring.\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eConstraints:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ccode\u003e0 \u0026#x3C;= s.length \u0026#x3C;= 5 * 104\u003c/code\u003e\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003es\u003c/code\u003e consists of English letters, digits, symbols and spaces.\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003eOverview\u003c/h2\u003e\n\u003cp\u003eThe primary challenge in this problem is to find an efficient way to get all possible longest substrings that contain no duplicate characters. To achieve this, we need to take advantage of Hash Table, which checks if a character occurs before quickly.\u003c/p\u003e\n\u003cp\u003eIn the following three approaches, we utilize a hash table to guarantee substrings have no repeating characters and optimize the algorithm to query possible substrings step by step: the first approach is intuitive but may cause a TLE, and the second one uses a slide window method to narrow down the search range, and the third make further use of HashMap to reduce the search range faster.\u003c/p\u003e\n\u003ch3\u003eApproach 1: Brute Force\u003c/h3\u003e\n\u003cp\u003eIntuition\u003c/p\u003e\n\u003cp\u003eCheck all the substring one by one to see if it has no duplicate character.\u003c/p\u003e\n\u003cp\u003eAlgorithm\u003c/p\u003e\n\u003cp\u003eSuppose we have a function \u003ccode\u003eboolean allUnique(String substring)\u003c/code\u003e which will return true if the characters in the substring are all unique, otherwise false. We can iterate through all the possible substrings of the given string s and call the function \u003ccode\u003eallUnique\u003c/code\u003e. If it turns out to be true, then we update our answer of the maximum length of substring without duplicate characters.\u003c/p\u003e\n\u003cp\u003eNow let's fill the missing parts:\u003c/p\u003e\n\u003col\u003e\n\u003cli\u003e\n\u003cp\u003eTo enumerate all substrings of a given string, we enumerate the start and end indices of them. Suppose the start and end indices are \u003ccode\u003ei\u003c/code\u003e and \u003ccode\u003ej\u003c/code\u003e, respectively. Then we have \u003ccode\u003e0 \u0026#x3C;= i \u0026#x3C;= j \u0026#x3C;= n\u003c/code\u003e  (here end index \u003ccode\u003ej\u003c/code\u003e is exclusive by convention). Thus, using two nested loops with \u003ccode\u003ei\u003c/code\u003e from 0 to \u003ccode\u003en - 1\u003c/code\u003e to \u003ccode\u003en\u003c/code\u003e,\nwe can enumerate all the substrings of \u003ccode\u003es\u003c/code\u003e.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eTo check if one string has duplicate characters, we can use a set. We iterate through all the characters in the string and put them into the \u003ccode\u003eset\u003c/code\u003e one by one. Before putting one character, we check if the set already contains it. If so, we return \u003ccode\u003efalse\u003c/code\u003e. After the loop, we return \u003ccode\u003etrue\u003c/code\u003e;\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ol\u003e\n\u003cul\u003e\n\u003cli\u003eTime complexity: \u003ccode\u003eO(n^3)\u003c/code\u003e\u003c/li\u003e\n\u003cli\u003eSpace complexity: \u003ccode\u003eO(min(m, n))\u003c/code\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eImplementation\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-typescript\"\u003efunction checkUnique(start: number, end: number, s: string): boolean {\n  let chars = new Set();\n\n  for (let i = start; i \u0026#x3C;= end; i++) {\n    let currentChar = s.charAt(i);\n    if (chars.has(currentChar)) {\n      return false;\n    }\n    chars.add(currentChar);\n  }\n  return true;\n};\n\nfunction lengthOfLongestSubstring(s: string): number {\n  let res = 0;\n  for (let left = 0; left \u0026#x3C; s.length; left++) {\n    for (let right = left; right \u0026#x3C; s.length; right++) {\n      if (checkUnique(left, right, s)) {\n        res = Math.max(res, right - left + 1);\n      }\n    }\n  }\n\n  return res;\n};\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3\u003eApproach 2: Sliding Window\u003c/h3\u003e\n\u003cp\u003eIntuition\u003c/p\u003e\n\u003cp\u003eGiven a substring with a fixed end index in the string, maintain a HashMap to record the frequency of each character in the current substring. If any character occurs more than once, drop the leftmost characters until there are no duplicate characters.\u003c/p\u003e\n\u003cp\u003eAlgorithm\u003c/p\u003e\n\u003cp\u003eThe naive approach is very straightforward. But it is too slow. So how can we optimize it?\u003c/p\u003e\n\u003cp\u003eIn the naive approaches, we repeatedly check a substring to see if it has duplicate character. But it is unnecessary. If a substring \u003ccode\u003es[i, j]\u003c/code\u003e from index \u003ccode\u003ei\u003c/code\u003e to \u003ccode\u003ej - 1\u003c/code\u003e is already checked to have no duplicate characters.We only need to check if \u003ccode\u003es[j]\u003c/code\u003e is already in the substring \u003ccode\u003es[i, j]\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003eTo check if a character is already in the substring, we can scan the substring, which leads to an \u003ccode\u003eO(n^2)\u003c/code\u003e algorithm. But we can do better.\u003c/p\u003e\n\u003cp\u003eBy using HashSet as a sliding window, checking if a character in the current can be done in \u003ccode\u003eO(1)\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003eA sliding window is an abstract concept commonly used in array/string problems. A window is a range of elements in the array/string which usually defined by the start and end indices, i.e. \u003ccode\u003e[i, j)\u003c/code\u003e (left-closed, right-open). A sliding window is a window \"slides\" its two boundaries to the certain direction. For example, if we slide \u003ccode\u003e[i, j)\u003c/code\u003e to the right by \u003ccode\u003e1\u003c/code\u003e element, then it becomes \u003ccode\u003e[i+1, j+1)\u003c/code\u003e  (left-closed, right-open).\u003c/p\u003e\n\u003cp\u003eBack to our problem. We use HashSet to store the characters in current window \u003ccode\u003e[i, j)\u003c/code\u003e (\u003ccode\u003ej = i\u003c/code\u003e initially). Then we slide the index \u003ccode\u003ej\u003c/code\u003e to the right. If it is not in the HashSet, we slide \u003ccode\u003ej\u003c/code\u003e further. Doing so until \u003ccode\u003es[j]\u003c/code\u003e is already in the HashSet. At this point, we found the maximum size of substrings without duplicate characters start with index \u003ccode\u003ei\u003c/code\u003e. If we do this for all \u003ccode\u003ei\u003c/code\u003e, we got our answer.\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eTime complexity: \u003ccode\u003eO(2n) = n\u003c/code\u003e\u003c/li\u003e\n\u003cli\u003eSpace complexity:  \u003ccode\u003eO(min(m, n)\u003c/code\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eImplementation\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-typescript\"\u003efunction lengthOfLongestSubstring(s: string): number {\n  const hashMap = new Map();\n\n  let left = 0;\n  let right = 0;\n  let res = 0;\n\n  while (right \u0026#x3C; s.length) {\n    const r = s.charAt(right);\n    const rStoredValue = hashMap.get(r) ?? 0; \n    hashMap.set(r, rStoredValue + 1);\n\n    while (hashMap.get(r) \u003e 1) {\n      const l = s.charAt(left);\n      const lStoredValue = hashMap.get(l) ?? 0;\n      hashMap.set(l, lStoredValue - 1);\n      left++;\n    }\n\n    res = Math.max(res, right - left + 1);\n\n    right++;\n  }\n\n  return res;\n\n};\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3\u003eApproach 3: Sliding Window Optimized\u003c/h3\u003e\n\u003cp\u003eIntuition\u003c/p\u003e\n\u003cp\u003eThe above solution requires at most 2n steps. In fact, it could be optimized to require only n steps. Instead of using a set to tell if a character exists or not, we could define a mapping of the characters to its index. Then we can skip the characters immediately when we found a repeated character.\u003c/p\u003e\n\u003cp\u003eAlgorithm\u003c/p\u003e\n\u003cp\u003eThe reason is that if \u003ccode\u003es[j]\u003c/code\u003e have a duplicate in the range \u003ccode\u003e[i,j)\u003c/code\u003e with index \u003ccode\u003ej′\u003c/code\u003e, we don't need to increase \u003ccode\u003ei\u003c/code\u003e little by little. We can skip all the elements in the range \u003ccode\u003e[i,j′]\u003c/code\u003e and let \u003ccode\u003ei\u003c/code\u003e to be \u003ccode\u003ej′+1\u003c/code\u003e directly.\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eTime complexity: \u003ccode\u003eO(n)\u003c/code\u003e\u003c/li\u003e\n\u003cli\u003eSpace complexity: \u003ccode\u003eO(min(m, n))\u003c/code\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eImplementation\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-typescript\"\u003efunction lengthOfLongestSubstring(s: string) {\n  const hashMap = new Map();\n\n  let res = 0;\n  let left = 0;\n\n  for (let right = 0; right \u0026#x3C; s.length; right++) {\n    const rLetter = s.charAt(right);\n    if (hashMap.has(rLetter)) {\n      left = Math.max(hashMap.get(rLetter), left);\n    }\n\n    res = Math.max(res, right - left + 1);\n    hashMap.set(rLetter, right + 1);\n  }\n \n  return res;\n};\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3\u003eTips\u003c/h3\u003e\n\u003cp\u003eAll previous implementations have no assumption on the charset of the string \u003ccode\u003es\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003eIf we know that the charset is rather small, we can mimic what a HashSet/HashMap does with a boolean/integer array as direct access table. Though the time complexity of query or insertion is still \u003ccode\u003eO(1)\u003c/code\u003e, the constant factor is smaller in an array than in a HashMap/HashSet. Thus, we can achieve a shorter runtime by the replacement here.\u003c/p\u003e\n\u003cp\u003eCommonly used tables are:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ccode\u003eint[26]\u003c/code\u003e for Letters 'a' - 'z' or 'A' - 'Z'\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003eint[128]\u003c/code\u003e for ASCII\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003eint[256]\u003c/code\u003e for Extended ASCII\u003c/li\u003e\n\u003c/ul\u003e\n\u003cpre\u003e\u003ccode class=\"language-typescript\"\u003efunction lengthOfLongestSubstring(s: string) {\n  const hashMap = new Map();\n\n  let res = 0;\n  let left = 0;\n  let right = 0;\n\n  while (right \u0026#x3C; s.length) {\n    const r = s.charAt(right);\n\n    let index = hashMap.get(r);\n    if (index !== null \u0026#x26;\u0026#x26; index \u003e= left \u0026#x26;\u0026#x26; index \u0026#x3C; right) {\n      left = index + 1;\n    }\n\n    res = Math.max(res, right - left + 1);\n\n    hashMap.set(r, right);\n    right++;\n  }\n\n  return res;\n\n};\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eFor this implementation, the space complexity is fixed to \u003ccode\u003eO(m)\u003c/code\u003e while the time complexity keeps unchanged. \u003ccode\u003em\u003c/code\u003e is the size of the charset.\u003c/p\u003e\n","title":"Longest Substring Without Repeating Characters (Medium level)","date":"2023-03-07"}},"__N_SSG":true},"page":"/posts/leetcode/[id]","query":{"id":"longest-substring-without-repeating-characters"},"buildId":"tqLdpZuk2pY0SHATa-eC0","nextExport":false,"isFallback":false,"gsp":true}</script><script nomodule="" src="/_next/static/runtime/polyfills-b99df05233331b7e84b8.js"></script><script async="" data-next-page="/posts/leetcode/[id]" src="/_next/static/tqLdpZuk2pY0SHATa-eC0/pages/posts/leetcode/%5Bid%5D.js"></script><script async="" data-next-page="/_app" src="/_next/static/tqLdpZuk2pY0SHATa-eC0/pages/_app.js"></script><script src="/_next/static/runtime/webpack-b65cab0b00afd201cbda.js" async=""></script><script src="/_next/static/chunks/framework.0f140d5eb2070c7e423d.js" async=""></script><script src="/_next/static/chunks/18c5f24d5ea4d2fcde72e74909d0feb9615668e4.de9c554ee09d03c4b240.js" async=""></script><script src="/_next/static/runtime/main-2ce0d867908e5dbc3349.js" async=""></script><script src="/_next/static/chunks/8621f9e819e9996655f35df90abc93ea78d6616f.ebc6927550d609a72945.js" async=""></script><script src="/_next/static/tqLdpZuk2pY0SHATa-eC0/_buildManifest.js" async=""></script><script src="/_next/static/tqLdpZuk2pY0SHATa-eC0/_ssgManifest.js" async=""></script></body></html>
