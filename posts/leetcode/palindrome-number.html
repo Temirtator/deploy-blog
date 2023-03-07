@@ -1,0 +1,81 @@
+<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="icon" href="/favicon.ico"/><meta name="description" content="Blog of Shagyrov Temirlan"/><meta property="og:image" content="https://og-image.now.sh/Personal%20blog%20by%20Temirlan.png?theme=light&amp;md=0&amp;fontSize=75px&amp;images=https%3A%2F%2Fassets.zeit.co%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg"/><meta name="og:title" content="Personal blog by Temirlan"/><meta name="twitter:card" content="summary_large_image"/><title>Palindrome Number (Easy level)</title><meta name="next-head-count" content="8"/><link rel="preload" href="/_next/static/css/c7773d89c84d065e2df5.css" as="style"/><link rel="stylesheet" href="/_next/static/css/c7773d89c84d065e2df5.css"/><link rel="preload" href="/_next/static/css/5d109cb4f0723c828d38.css" as="style"/><link rel="stylesheet" href="/_next/static/css/5d109cb4f0723c828d38.css"/><link rel="preload" href="/_next/static/iRzaAqq8oC6YzQxgo9rZW/pages/posts/leetcode/%5Bid%5D.js" as="script"/><link rel="preload" href="/_next/static/iRzaAqq8oC6YzQxgo9rZW/pages/_app.js" as="script"/><link rel="preload" href="/_next/static/runtime/webpack-b65cab0b00afd201cbda.js" as="script"/><link rel="preload" href="/_next/static/chunks/framework.0f140d5eb2070c7e423d.js" as="script"/><link rel="preload" href="/_next/static/chunks/c99d1c3084ecd8e74a5f786c47773bd5690c4f4c.de9c554ee09d03c4b240.js" as="script"/><link rel="preload" href="/_next/static/runtime/main-c1bca9c2911ef8da43bc.js" as="script"/><link rel="preload" href="/_next/static/chunks/24d134ad48a53041961715c5d9b047e2f98a55c4.ebc6927550d609a72945.js" as="script"/></head><body><div id="__next"><div class="container"><header class="header_header__HDboe"><img src="/images/avatar.jpg" class="header_headerImage__2BWot utils_borderCircle__13qdJ" alt="Personal blog by "/><div class="header_header_right_side__3pKl-"><div class="utils_ml8__35Wt1 header_blog_description__Oqypm"><div class="utils_headingLw__1vVPe null">Personal blog by <a class="null header_linkToInstagram__3xjpo" target="_blank" href="https://www.instagram.com/temirtator23/">Shagyrov Temirlan</a></div><div class="utils_description__17znU">Let&#x27;s discuss almost everything</div></div><div class="toggle_toggle_container__3fg78"><div class="toggle_dialog_button__c8m4w toggle_disabled__3tCf-"><img src="/images/light.png" alt="light"/></div></div></div></header><br/><div><main><article><h1 class="utils_headingXl__1XecN null">Palindrome Number (Easy level)</h1><div class="utils_lightText__12Ckm"><time dateTime="2023-03-08">March 8, 2023</time></div><div><h2>Description</h2>
+<p>Given an integer <code>x</code>, return true if <code>x</code> is a palindrome, and <code>false</code> otherwise.</p>
+<p>Example 1:</p>
+<pre><code>Input: x = 121
+Output: true
+Explanation: 121 reads as 121 from left to right and from right to left.
+</code></pre>
+<p>Example 2:</p>
+<pre><code>Input: x = -121
+Output: false
+Explanation: From left to right, it reads -121. From right to left, it becomes 121-. Therefore it is not a palindrome.
+</code></pre>
+<p>Example 3:</p>
+<pre><code>Input: x = 10
+Output: false
+Explanation: Reads 01 from right to left. Therefore it is not a palindrome.
+</code></pre>
+<p>Constraints:</p>
+<ul>
+<li><code>-231 &#x3C;= x &#x3C;= 231 - 1</code></li>
+</ul>
+<p>Follow up: Could you solve it without converting the integer to a string?</p>
+<h2>Solutions</h2>
+<h3>Convert number to string</h3>
+<pre><code class="language-typescript">function isPalindrome(x: number): boolean {
+  const xStr = String(x);
+  const l = xStr.length;
+  if (l &#x3C;= 1) return true;
+  if (l % 2 == 0) {
+    const h = xStr.substring(0, l/2);
+    const h1 = xStr.substring(l/2, l);
+    return h == h1.split("").reverse().join("");
+  }
+  const h = xStr.substring(0, Math.round(l/2));
+  const h1 = xStr.substring(Math.floor(l/2), l);
+  return h == h1.split("").reverse().join("");
+};
+</code></pre>
+<h3>Revert half of the number</h3>
+<p>Intuition</p>
+<p>The first idea that comes to mind is to convert the number into string, and check if the string is a palindrome, but this would require extra non-constant space for creating the string which is not allowed by the problem description.</p>
+<p>Second idea would be reverting the number itself, and then compare the number with original number, if they are the same, then the number is a palindrome. However, if the reversed number is larger than <code>int.MAX</code>, we will hit integer overflow problem.</p>
+<p>Following the thoughts based on the second idea, to avoid the overflow issue of the reverted number, what if we only revert half of the <code>int</code> number? After all, the reverse of the last half of the palindrome should be the same as the first half of the number, if the number is a palindrome.</p>
+<p>For example, if the input is <code>1221</code>, if we can revert the last part of the number "1221" from "21" to "12", and compare it with the first half of the number "12", since 12 is the same as 12, we know that the number is a palindrome.</p>
+<p>Let's see how we could translate this idea into an algorithm.</p>
+<p>Algorithm</p>
+<p>First of all we should take care of some edge cases. All negative numbers are not palindrome, for example: -123 is not a palindrome since the '-' does not equal to '3'. So we can return false for all negative numbers.</p>
+<p>Now let's think about how to revert the last half of the number. For number <code>1221</code>, if we do <code>1221 % 10</code>, we get the last digit <code>1</code>, to get the second to the last digit, we need to remove the last digit from <code>1221</code>, we could do so by dividing it by <code>10</code>, <code>1221 / 10 = 122</code>. Then we can get the last digit again by doing a modulus by <code>10</code>, <code>122 % 10 = 2</code>, and if we multiply the last digit by <code>10</code> and add the second last digit, <code>1 * 10 + 2 = 12</code>, it gives us the reverted number we want. Continuing this process would give us the reverted number with more digits.</p>
+<p>Now the question is, how do we know that we've reached the half of the number?</p>
+<p>Since we divided the number by 10, and multiplied the reversed number by 10, when the original number is less than the reversed number, it means we've processed half of the number digits.</p>
+<ul>
+<li>Time complexity: <code>O(log10(n))</code>. We divided the input by 10 for every iteration, so the time complexity is <code>O(log10(n))</code>.</li>
+<li>Space complexity: <code>O(1)</code></li>
+</ul>
+<p>Implementation</p>
+<pre><code class="language-typescript">function isPalindrome(x: number): boolean {
+  /*
+    Special cases:
+    As discussed above, when x &#x3C; 0, x is not a palindrome.
+    Also if the last digit of the number is 0, in order to be a palindrome,
+    the first digit of the number also needs to be 0.
+    Only 0 satisfy this property.
+  */
+  if (x &#x3C; 0 || (x % 10 == 0 &#x26;&#x26; x != 0)) {
+    return false;
+  }
+
+  let revertedNumber = 0;
+  while (x > revertedNumber) {
+    revertedNumber = revertedNumber * 10 + x % 10;
+    x = ~~(x / 10);
+  }
+  /*
+    When the length is an odd number, we can get rid of the middle digit by revertedNumber/10
+    For example when the input is 12321, at the end of the while loop we get x = 12, revertedNumber = 123,
+    since the middle digit doesn't matter in palidrome(it will always equal to itself), we can simply get rid of it.
+  */
+  return x == revertedNumber || x == ~~(revertedNumber / 10);
+};
+</code></pre>
+</div></article></main><h2 class="layout_backToHome__VAS_W"><a>← Back to home</a></h2></div></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"leetcodeData":{"id":"palindrome-number","contentHtml":"\u003ch2\u003eDescription\u003c/h2\u003e\n\u003cp\u003eGiven an integer \u003ccode\u003ex\u003c/code\u003e, return true if \u003ccode\u003ex\u003c/code\u003e is a palindrome, and \u003ccode\u003efalse\u003c/code\u003e otherwise.\u003c/p\u003e\n\u003cp\u003eExample 1:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003eInput: x = 121\nOutput: true\nExplanation: 121 reads as 121 from left to right and from right to left.\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eExample 2:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003eInput: x = -121\nOutput: false\nExplanation: From left to right, it reads -121. From right to left, it becomes 121-. Therefore it is not a palindrome.\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eExample 3:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003eInput: x = 10\nOutput: false\nExplanation: Reads 01 from right to left. Therefore it is not a palindrome.\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eConstraints:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ccode\u003e-231 \u0026#x3C;= x \u0026#x3C;= 231 - 1\u003c/code\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eFollow up: Could you solve it without converting the integer to a string?\u003c/p\u003e\n\u003ch2\u003eSolutions\u003c/h2\u003e\n\u003ch3\u003eConvert number to string\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-typescript\"\u003efunction isPalindrome(x: number): boolean {\n  const xStr = String(x);\n  const l = xStr.length;\n  if (l \u0026#x3C;= 1) return true;\n  if (l % 2 == 0) {\n    const h = xStr.substring(0, l/2);\n    const h1 = xStr.substring(l/2, l);\n    return h == h1.split(\"\").reverse().join(\"\");\n  }\n  const h = xStr.substring(0, Math.round(l/2));\n  const h1 = xStr.substring(Math.floor(l/2), l);\n  return h == h1.split(\"\").reverse().join(\"\");\n};\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3\u003eRevert half of the number\u003c/h3\u003e\n\u003cp\u003eIntuition\u003c/p\u003e\n\u003cp\u003eThe first idea that comes to mind is to convert the number into string, and check if the string is a palindrome, but this would require extra non-constant space for creating the string which is not allowed by the problem description.\u003c/p\u003e\n\u003cp\u003eSecond idea would be reverting the number itself, and then compare the number with original number, if they are the same, then the number is a palindrome. However, if the reversed number is larger than \u003ccode\u003eint.MAX\u003c/code\u003e, we will hit integer overflow problem.\u003c/p\u003e\n\u003cp\u003eFollowing the thoughts based on the second idea, to avoid the overflow issue of the reverted number, what if we only revert half of the \u003ccode\u003eint\u003c/code\u003e number? After all, the reverse of the last half of the palindrome should be the same as the first half of the number, if the number is a palindrome.\u003c/p\u003e\n\u003cp\u003eFor example, if the input is \u003ccode\u003e1221\u003c/code\u003e, if we can revert the last part of the number \"1221\" from \"21\" to \"12\", and compare it with the first half of the number \"12\", since 12 is the same as 12, we know that the number is a palindrome.\u003c/p\u003e\n\u003cp\u003eLet's see how we could translate this idea into an algorithm.\u003c/p\u003e\n\u003cp\u003eAlgorithm\u003c/p\u003e\n\u003cp\u003eFirst of all we should take care of some edge cases. All negative numbers are not palindrome, for example: -123 is not a palindrome since the '-' does not equal to '3'. So we can return false for all negative numbers.\u003c/p\u003e\n\u003cp\u003eNow let's think about how to revert the last half of the number. For number \u003ccode\u003e1221\u003c/code\u003e, if we do \u003ccode\u003e1221 % 10\u003c/code\u003e, we get the last digit \u003ccode\u003e1\u003c/code\u003e, to get the second to the last digit, we need to remove the last digit from \u003ccode\u003e1221\u003c/code\u003e, we could do so by dividing it by \u003ccode\u003e10\u003c/code\u003e, \u003ccode\u003e1221 / 10 = 122\u003c/code\u003e. Then we can get the last digit again by doing a modulus by \u003ccode\u003e10\u003c/code\u003e, \u003ccode\u003e122 % 10 = 2\u003c/code\u003e, and if we multiply the last digit by \u003ccode\u003e10\u003c/code\u003e and add the second last digit, \u003ccode\u003e1 * 10 + 2 = 12\u003c/code\u003e, it gives us the reverted number we want. Continuing this process would give us the reverted number with more digits.\u003c/p\u003e\n\u003cp\u003eNow the question is, how do we know that we've reached the half of the number?\u003c/p\u003e\n\u003cp\u003eSince we divided the number by 10, and multiplied the reversed number by 10, when the original number is less than the reversed number, it means we've processed half of the number digits.\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eTime complexity: \u003ccode\u003eO(log10(n))\u003c/code\u003e. We divided the input by 10 for every iteration, so the time complexity is \u003ccode\u003eO(log10(n))\u003c/code\u003e.\u003c/li\u003e\n\u003cli\u003eSpace complexity: \u003ccode\u003eO(1)\u003c/code\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eImplementation\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-typescript\"\u003efunction isPalindrome(x: number): boolean {\n  /*\n    Special cases:\n    As discussed above, when x \u0026#x3C; 0, x is not a palindrome.\n    Also if the last digit of the number is 0, in order to be a palindrome,\n    the first digit of the number also needs to be 0.\n    Only 0 satisfy this property.\n  */\n  if (x \u0026#x3C; 0 || (x % 10 == 0 \u0026#x26;\u0026#x26; x != 0)) {\n    return false;\n  }\n\n  let revertedNumber = 0;\n  while (x \u003e revertedNumber) {\n    revertedNumber = revertedNumber * 10 + x % 10;\n    x = ~~(x / 10);\n  }\n  /*\n    When the length is an odd number, we can get rid of the middle digit by revertedNumber/10\n    For example when the input is 12321, at the end of the while loop we get x = 12, revertedNumber = 123,\n    since the middle digit doesn't matter in palidrome(it will always equal to itself), we can simply get rid of it.\n  */\n  return x == revertedNumber || x == ~~(revertedNumber / 10);\n};\n\u003c/code\u003e\u003c/pre\u003e\n","title":"Palindrome Number (Easy level)","date":"2023-03-08"}},"__N_SSG":true},"page":"/posts/leetcode/[id]","query":{"id":"palindrome-number"},"buildId":"iRzaAqq8oC6YzQxgo9rZW","nextExport":false,"isFallback":false,"gsp":true}</script><script nomodule="" src="/_next/static/runtime/polyfills-895c6aa13952c0a67e69.js"></script><script async="" data-next-page="/posts/leetcode/[id]" src="/_next/static/iRzaAqq8oC6YzQxgo9rZW/pages/posts/leetcode/%5Bid%5D.js"></script><script async="" data-next-page="/_app" src="/_next/static/iRzaAqq8oC6YzQxgo9rZW/pages/_app.js"></script><script src="/_next/static/runtime/webpack-b65cab0b00afd201cbda.js" async=""></script><script src="/_next/static/chunks/framework.0f140d5eb2070c7e423d.js" async=""></script><script src="/_next/static/chunks/c99d1c3084ecd8e74a5f786c47773bd5690c4f4c.de9c554ee09d03c4b240.js" async=""></script><script src="/_next/static/runtime/main-c1bca9c2911ef8da43bc.js" async=""></script><script src="/_next/static/chunks/24d134ad48a53041961715c5d9b047e2f98a55c4.ebc6927550d609a72945.js" async=""></script><script src="/_next/static/iRzaAqq8oC6YzQxgo9rZW/_buildManifest.js" async=""></script><script src="/_next/static/iRzaAqq8oC6YzQxgo9rZW/_ssgManifest.js" async=""></script></body></html>
